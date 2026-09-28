@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #2d2d3a;
+    font-size: 28px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #6b6b7b;
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 15px;
+}
+
+.upload-box {
+    border: 2px dashed #a0a0b0;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    background: #f9f9fc;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 0 auto 20px auto;
+    font-size: 14px;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #5568d3;
+}
+
+.results {
+    margin-top: 24px;
+    padding: 0 4px;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+.summary {
+    background: #f0f2fb;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.jobs-heading {
+    font-size: 18px;
+    color: #2d2d3a;
+    margin-bottom: 12px;
+}
+
+.job-card {
+    border: 1px solid #e2e2ea;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: #fff;
+}
+
+.job-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.job-title:hover {
+    text-decoration: underline;
+}
+
+.job-meta {
+    font-size: 13px;
+    color: #6b6b7b;
+    margin: 4px 0 8px 0;
+}
+
+.job-desc {
+    font-size: 13px;
+    color: #444;
+}
+
+.loading, .error {
+    text-align: center;
+    color: #6b6b7b;
+}
+
+.error {
+    color: #d64545;
+}
+.summary {
+    background: linear-gradient(135deg, #f0f2fb 0%, #e8ebfa 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.summary p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.tag {
+    background: #667eea;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.roles-line {
+    margin-bottom: 0;
+}
+
+.jobs-heading {
+    font-size: 19px;
+    color: #2d2d3a;
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #e2e2ea;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
+    background: #fff;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.job-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2d2d3a;
+    margin-bottom: 4px;
+}
+
+.job-meta {
+    font-size: 13px;
+    color: #6b6b7b;
+    margin-bottom: 8px;
+}
+
+.job-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.apply-btn {
+    background: #667eea;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.apply-btn:hover {
+    background: #5568d3;
+}
+/* Responsive adjustments for mobile screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .upload-box {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    input[type="file"] {
+        font-size: 12px;
+        max-width: 100%;
+    }
+
+    .summary {
+        padding: 16px;
+    }
+
+    .job-card {
+        flex-direction: column;
+        align-items: flex-stretch;
+        gap: 12px;
+    }
+
+    .apply-btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .job-title {
+        font-size: 15px;
+    }
+
+    .tag {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+}
