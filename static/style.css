@@ -4,45 +4,63 @@
     box-sizing: border-box;
 }
 
-body {
+
+ body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #758ae7 0%, #342f34 100%);
+    background-attachment: fixed;
     min-height: 100vh;
+    color: #1f1f2e;
+}
+
+
+/* Top navigation bar */
+.navbar {
+    background: linear-gradient(135deg, #758ae7 0%, #342f34 100%);
+    padding: 18px 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: space-between;
 }
 
-.container {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 40px;
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+.navbar .logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #efeff3;
 }
 
-h1 {
-    color: #2d2d3a;
-    font-size: 28px;
-    margin-bottom: 8px;
+/* Hero section - full width, not a small centered card */
+.hero {
+    background: transparent;
+    padding: 60px 40px 80px;
     text-align: center;
+    color: white;
 }
 
-.subtitle {
-    color: #6b6b7b;
-    text-align: center;
-    margin-bottom: 32px;
-    font-size: 15px;
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero .subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Main content area - wide, uses the full screen with margins, not a tiny box */
+.page-wrapper {
+    max-width: 1100px;
+    margin: -50px auto 60px auto;
+    padding: 0 20px;
 }
 
 .upload-box {
-    border: 2px dashed #a0a0b0;
-    border-radius: 12px;
-    padding: 30px;
+    background: #f4f2f2;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     text-align: center;
-    background: #f9f9fc;
+    margin-bottom: 30px;
 }
 
 input[type="file"] {
@@ -52,10 +70,10 @@ input[type="file"] {
 }
 
 button {
-    background: #667eea;
+    background: #4a5bd4;
     color: white;
     border: none;
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 600;
@@ -64,223 +82,139 @@ button {
 }
 
 button:hover {
-    background: #5568d3;
+    background: #3a49b8;
 }
 
+/* Results area now spans the full wide layout, using a grid on large screens */
 .results {
-    margin-top: 24px;
-    padding: 0 4px;
-    color: #333;
-    font-size: 14px;
-    line-height: 1.6;
-    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
+
 .summary {
-    background: #f0f2fb;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #333;
-}
-
-.jobs-heading {
-    font-size: 18px;
-    color: #2d2d3a;
-    margin-bottom: 12px;
-}
-
-.job-card {
-    border: 1px solid #e2e2ea;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 12px;
-    background: #fff;
-}
-
-.job-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #667eea;
-    text-decoration: none;
-}
-
-.job-title:hover {
-    text-decoration: underline;
-}
-
-.job-meta {
-    font-size: 13px;
-    color: #6b6b7b;
-    margin: 4px 0 8px 0;
-}
-
-.job-desc {
-    font-size: 13px;
-    color: #444;
-}
-
-.loading, .error {
-    text-align: center;
-    color: #6b6b7b;
-}
-
-.error {
-    color: #d64545;
-}
-.summary {
-    background: linear-gradient(135deg, #f0f2fb 0%, #e8ebfa 100%);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .summary p {
     font-size: 14px;
-    color: #333;
-    margin-bottom: 10px;
+    color: #444;
+    margin-bottom: 12px;
 }
 
 .tag-list {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .tag {
-    background: #667eea;
+    background: #4a5bd4;
     color: white;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
 }
 
-.roles-line {
-    margin-bottom: 0;
+.jobs-heading {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: #e4e4f0;
 }
 
-.jobs-heading {
-    font-size: 19px;
-    color: #2d2d3a;
-    margin-bottom: 14px;
-    font-weight: 700;
+/* Job cards laid out in a responsive grid instead of a single narrow column */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
 }
 
 .job-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    border: 1px solid #e2e2ea;
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 14px;
-    background: #fff;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .job-card:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-}
-
-.job-info {
-    flex: 1;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgb(155, 152, 152);
 }
 
 .job-title {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
-    color: #2d2d3a;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .job-meta {
     font-size: 13px;
     color: #6b6b7b;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .job-desc {
     font-size: 13px;
     color: #555;
     line-height: 1.5;
+    margin-bottom: 16px;
 }
 
 .apply-btn {
-    background: #667eea;
+    background: #4a5bd4;
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    white-space: nowrap;
+    text-align: center;
+    align-self: flex-start;
     transition: background 0.2s ease;
 }
 
 .apply-btn:hover {
-    background: #5568d3;
+    background: #3a49b8;
 }
-/* Responsive adjustments for mobile screens */
+
+.loading, .error {
+    text-align: center;
+    color: #e4e4f0;
+    padding: 20px;
+}
+
+.error {
+    color: #d64545;
+}
+
+/* Mobile adjustments */
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
-        align-items: flex-start;
+    .hero {
+        padding: 40px 20px 60px;
     }
-
-    .container {
-        padding: 20px;
-        border-radius: 12px;
+    .hero h1 {
+        font-size: 26px;
     }
-
-    h1 {
-        font-size: 22px;
+    .page-wrapper {
+        margin-top: -30px;
     }
-
-    .subtitle {
-        font-size: 13px;
-        margin-bottom: 24px;
-    }
-
     .upload-box {
-        padding: 20px;
+        padding: 22px;
     }
-
     button {
         width: 100%;
-        padding: 14px;
-        font-size: 14px;
     }
-
-    input[type="file"] {
-        font-size: 12px;
-        max-width: 100%;
-    }
-
-    .summary {
-        padding: 16px;
-    }
-
-    .job-card {
-        flex-direction: column;
-        align-items: flex-stretch;
-        gap: 12px;
-    }
-
-    .apply-btn {
-        text-align: center;
-        width: 100%;
-    }
-
-    .job-title {
-        font-size: 15px;
-    }
-
-    .tag {
-        font-size: 11px;
-        padding: 4px 10px;
+    .jobs-grid {
+        grid-template-columns: 1fr;
     }
 }

@@ -38,6 +38,7 @@ document.getElementById('uploadBtn').addEventListener('click', async () => {
         if (data.jobs.length === 0) {
             html += `<p>No matching jobs found right now.</p>`;
         } else {
+            html += `<div class="jobs-grid">`;
             data.jobs.forEach(job => {
                 html += `
                     <div class="job-card">
@@ -50,6 +51,7 @@ document.getElementById('uploadBtn').addEventListener('click', async () => {
                     </div>
                 `;
             });
+            html += `</div>`;
         }
 
         resultsDiv.innerHTML = html;
